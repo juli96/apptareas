@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+  h1= title
+  p Welcome to #{title}
+  
+  input(type='text', name='titol')
+  br
+  
+  textarea(type='text', name='descripcio', rows='4', cols='100')
+  
+  br
+  input(type='date', name='data')
+  
+  form(action='/tareas/crear')
+        input(type='submit', value='Crear Tarea')
