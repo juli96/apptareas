@@ -9,13 +9,13 @@ var path = require('path');
 );*/
 var storage  = process.env.DATABASE_STORAGE;
 //var url = //process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
-var DB_name  = ("d8f490ikj9dmut");
-var user     = ("rointbggrmuiik");
-var pwd      = ("bceb3f4d9996c1cea37dc4150be988b449d65103067e27eb214688d3bc73976a");
-var protocol = ("postgres");
-var dialect  = ("postgres");
-var port     = ("5432");
-var host     = ("ec2-54-163-252-55.compute-1.amazonaws.com");
+var DB_name  = 'd8f490ikj9dmut';
+var user     = 'rointbggrmuiik';
+var pwd      = 'bceb3f4d9996c1cea37dc4150be988b449d65103067e27eb214688d3bc73976a';
+var protocol = 'postgres';
+var dialect  = 'postgres';
+var port     = '5432';
+var host     = 'ec2-54-163-252-55.compute-1.amazonaws.com';
 
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize(DB_name, user, pwd, 
@@ -23,7 +23,7 @@ var sequelize = new Sequelize(DB_name, user, pwd,
     protocol: protocol,
     port:     port,
     host:     host,
-    storage:  storage,  // solo SQLite (.env)
+    storage: storage,
     omitNull: true      // solo Postgres
   }      
 );
