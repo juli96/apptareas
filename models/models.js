@@ -1,6 +1,6 @@
 var path = require('path');
 // Cargar el modelo ORM
-
+var Sequelize = require('sequelize');
 //Uso de la BBDD SQLite
 /*var sequelize = new Sequelize(null, null, null,
   { dialect:  "sqlite",
@@ -17,13 +17,12 @@ var dialect  = 'postgres';
 var port     = '5432';
 var host     = 'ec2-54-163-252-55.compute-1.amazonaws.com';
 
-var Sequelize = require('sequelize');
+
 var sequelize = new Sequelize(DB_name, user, pwd, 
   { dialect:  protocol,
     protocol: protocol,
     port:     port,
     host:     host,
-    storage: storage,
     omitNull: true      // solo Postgres
   }      
 );
