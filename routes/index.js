@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var tareasArray = [
+var models = require('../models/models.js');
+
+//findAll devuelve un array con el contenido de la BBDD
+
+/*var tareasArray = [
     {
         "nom":"Diseño wireframe",
         "etiquetes": [ "wireframe","app","hibrida"],
@@ -23,15 +27,20 @@ var tareasArray = [
         "realitzacio":"36"
     }
     ];
-
+*/
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Bienvenido a la pagina principal del proyecte Node'});
 });
 
+
+
 router.get('/tareas', function(req, res, next) {
-  res.render('tareas', { title: 'Tareas', tareas: tareasArray});
+  //res.render('tareas', { title: 'Tareas', tareas: tareasArray});
+    models.Tbltareas.findAll().then(function(tbltareas) {
+        res.render('tareas', { title: 'Tareas', tareas: tbltareas, errors: []});
+    }).catch(function(error) { console.log("Error");})
 });
 
 router.get('/tareas/new', function(req, res, next) {

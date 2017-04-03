@@ -2,12 +2,11 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  form(action='/tareas/crear', method='post')
+  p Welcome to #{title} 
     each tarea in tareas
-        h1 #{tarea.nom}
-        p Etiquetes: #{tarea.etiquetes}
-        p Realització del #{tarea.realitzacio}%
+        h3 #{tarea.nombre}
+        p Etiquetes: #{tarea.etiquetas}
+        p Realització del #{tarea.porcentaje} %
         
   
   a(href='/tareas/new') Crear nueva tarea
