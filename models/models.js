@@ -7,15 +7,15 @@ var path = require('path');
     storage:  "tbltareas.sqlite"
   }      
 );*/
-var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
-var DB_name  = (url[6]||null);
-var user     = (url[2]||null);
-var pwd      = (url[3]||null);
-var protocol = (url[1]||null);
-var dialect  = (url[1]||null);
-var port     = (url[5]||null);
-var host     = (url[4]||null);
 var storage  = process.env.DATABASE_STORAGE;
+//var url = //process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
+var DB_name  = ("d8f490ikj9dmut");
+var user     = ("rointbggrmuiik");
+var pwd      = ("bceb3f4d9996c1cea37dc4150be988b449d65103067e27eb214688d3bc73976a");
+var protocol = ("postgres");
+var dialect  = ("postgres");
+var port     = ("5432");
+var host     = ("ec2-54-163-252-55.compute-1.amazonaws.com");
 
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize(DB_name, user, pwd, 
